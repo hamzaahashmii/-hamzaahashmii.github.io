@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muhammad Hamza – IT Support &amp; Operations Engineer, Berlin</title>
-<meta name="description" content="IT Support Engineer in Berlin. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud. Home labs on SSO and device management.">
-<meta property="og:title" content="Muhammad Hamza – IT Support &amp; Operations Engineer, Berlin">
+<title>Muhammad Hamza – IT Support &amp; Operations Engineer</title>
+<meta name="description" content="IT Support Engineer. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud. Home labs on SSO and device management.">
+<meta property="og:title" content="Muhammad Hamza – IT Support &amp; Operations Engineer">
 <meta property="og:description" content="Identity, devices and end-user support. Home labs on single sign-on with Entra ID and device management with Intune.">
 <meta property="og:image" content="https://hamzalab.de/images/og.png">
 <meta property="og:url" content="https://hamzalab.de">
@@ -46,7 +46,7 @@ a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius
 .avail{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;color:var(--fog);margin-bottom:22px}
 .avail b{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(61,214,140,.6);animation:pulse 2.4s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,214,140,0)}100%{box-shadow:0 0 0 0 rgba(61,214,140,0)}}
-.hero h1{font-size:clamp(40px,5.6vw,66px);line-height:1.04;letter-spacing:-.035em;margin:0 0 24px;font-weight:800;color:#fff}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.035em;margin:0 0 24px;font-weight:800;color:#fff}
 .hero .lead{font-size:19px;color:#B9C6D9;max-width:31em;margin:0 0 34px}
 .cta{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15.5px;transition:transform .15s}
@@ -57,7 +57,13 @@ a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius
 .facts div{font-size:14.5px;color:var(--fog)}
 .facts strong{display:block;color:#fff;font-size:22px;letter-spacing:-.01em}
 
-.who{margin-bottom:26px}.who strong{display:block;font-size:clamp(26px,3vw,34px);color:#fff;letter-spacing:-.02em;line-height:1.2}.who span{display:block;font-size:18px;color:#C9D4E5;margin-top:4px;font-weight:500}
+.who{display:flex;align-items:center;gap:18px;margin-bottom:26px;padding:16px 20px 16px 16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:20px;width:fit-content;max-width:100%;backdrop-filter:blur(6px)}
+.who .avatar{width:64px;height:64px;flex:none;filter:drop-shadow(0 10px 22px rgba(139,107,255,.5))}
+.who strong{display:block;font-size:clamp(22px,2.6vw,28px);color:#fff;letter-spacing:-.02em;line-height:1.15}
+.who span{display:block;font-size:15.5px;color:#C9D4E5;margin-top:2px;font-weight:600}
+.roles{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.roles em{font-style:normal;font-size:12.5px;font-weight:600;padding:3px 10px;border-radius:999px;color:#fff}
+.roles em:nth-child(1){background:rgba(139,107,255,.35)}.roles em:nth-child(2){background:rgba(25,198,182,.32)}.roles em:nth-child(3){background:rgba(245,183,64,.32)}
 
 /* animated IT activity in the hero background */
 .feed{position:absolute;top:0;bottom:0;right:0;width:52%;display:flex;gap:18px;justify-content:flex-end;padding-right:2%;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%),linear-gradient(transparent,#000 15%,#000 85%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 35%),linear-gradient(transparent,#000 15%,#000 85%,transparent);mask-composite:intersect}
@@ -66,7 +72,7 @@ a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius
 .feed li{display:flex;align-items:center;gap:10px;white-space:nowrap;font-family:var(--mono);font-size:13px;color:#DCE5F2;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 14px}
 .feed li i{width:8px;height:8px;border-radius:50%;flex:none}
 @keyframes drift{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-@media (max-width:920px){.feed{width:100%}.feed .c2{display:none}.feed ul{opacity:.1}}
+@media (max-width:920px){.feed{display:none}}
 /* the signature: a sign-in flow */
 .flow{background:var(--night2);border:1px solid var(--edge);border-radius:20px;padding:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
 .flow .head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--fog);margin-bottom:18px}
@@ -159,6 +165,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .contact{padding:40px 28px}
 }
 @media (max-width:560px){
+  .hero .lead{font-size:17px}.who{gap:14px;padding:14px}.who .avatar{width:52px;height:52px}
+ 
   .grid3,.skills,.edu{grid-template-columns:1fr}
   .wire{width:16px}
   .node{padding:10px 6px}.node strong{font-size:13px}
@@ -209,10 +217,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <main id="top">
 <div class="hero"><div class="feed" aria-hidden="true"><ul class="c1"><li><i style="background:#3DD68C"></i>Ticket INC-1042 resolved</li><li><i style="background:#4C8DFF"></i>MacBook enrolled in JumpCloud</li><li><i style="background:#8B6BFF"></i>MFA reset for a new joiner</li><li><i style="background:#F5B740"></i>VPN fixed: DNS lookup</li><li><i style="background:#19C6B6"></i>Okta access granted to Jira</li><li><i style="background:#3DD68C"></i>Onboarding done: laptop, accounts, training</li><li><i style="background:#8B6BFF"></i>Passkey registered</li><li><i style="background:#F5B740"></i>Printer back online</li><li><i style="background:#3DD68C"></i>Ticket INC-1042 resolved</li><li><i style="background:#4C8DFF"></i>MacBook enrolled in JumpCloud</li><li><i style="background:#8B6BFF"></i>MFA reset for a new joiner</li><li><i style="background:#F5B740"></i>VPN fixed: DNS lookup</li><li><i style="background:#19C6B6"></i>Okta access granted to Jira</li><li><i style="background:#3DD68C"></i>Onboarding done: laptop, accounts, training</li><li><i style="background:#8B6BFF"></i>Passkey registered</li><li><i style="background:#F5B740"></i>Printer back online</li></ul><ul class="c2"><li><i style="background:#FF6F91"></i>Leaver offboarded, device wiped</li><li><i style="background:#4C8DFF"></i>Conditional Access policy passed</li><li><i style="background:#19C6B6"></i>Wi-Fi issue solved: DHCP lease</li><li><i style="background:#3DD68C"></i>Ticket INC-1043 resolved</li><li><i style="background:#4C8DFF"></i>Win32 app deployed via Intune</li><li><i style="background:#8B6BFF"></i>BitLocker key escrowed</li><li><i style="background:#3DD68C"></i>Access review completed</li><li><i style="background:#F5B740"></i>Meeting-room AV ready</li><li><i style="background:#FF6F91"></i>Leaver offboarded, device wiped</li><li><i style="background:#4C8DFF"></i>Conditional Access policy passed</li><li><i style="background:#19C6B6"></i>Wi-Fi issue solved: DHCP lease</li><li><i style="background:#3DD68C"></i>Ticket INC-1043 resolved</li><li><i style="background:#4C8DFF"></i>Win32 app deployed via Intune</li><li><i style="background:#8B6BFF"></i>BitLocker key escrowed</li><li><i style="background:#3DD68C"></i>Access review completed</li><li><i style="background:#F5B740"></i>Meeting-room AV ready</li></ul></div><div class="wrap">
   <div>
-    <div class="who"><strong>Muhammad Hamza</strong><span>IT Support &amp; Operations Engineer · Berlin</span></div>
+    <div class="who"><svg class="avatar" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B6BFF"/><stop offset=".55" stop-color="#4C8DFF"/><stop offset="1" stop-color="#19C6B6"/></linearGradient></defs><path d="M24 3 42 9v13c0 11.5-7.6 19.6-18 23C13.6 41.6 6 33.5 6 22V9z" fill="url(#lg2)"/><path d="M15 31V17l5 7 4-7 4 7 5-7v14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Muhammad Hamza</strong><span>IT Support &amp; Operations Engineer</span><div class="roles"><em>Identity</em><em>Devices</em><em>End-user support</em></div></div></div>
     <div class="avail"><b></b>Open to IT support, IT operations and identity roles</div>
     <h1>I keep people signed in, secure and working.</h1>
-    <p class="lead">IT Support Engineer at a regulated financial-services company in Berlin. I look after identity, devices and day-to-day support for 100+ employees, and build home labs to go deeper.</p>
+    <p class="lead">IT Support Engineer at a regulated financial-services company. I look after identity, devices and day-to-day support for 100+ employees, and build home labs to go deeper.</p>
     <div class="cta"><a class="btn main" href="#projects">See my projects</a><a class="btn line" href="resume.pdf" download>Download resume</a></div>
     <div class="facts">
       <div><strong>100+</strong>employees supported</div>
@@ -285,13 +293,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="experience"><div class="wrap">
   <div class="title"><h2>Experience</h2><p>IT support across Germany and Pakistan since 2020.</p></div>
-  <div class="xp"><div class="when">Dec 2025 – present<br>Berlin</div><div class="what">
+  <div class="xp"><div class="when">Dec 2025 – present</div><div class="what">
     <h3>IT Support Engineer <span class="promo">Promoted</span></h3><p class="org">Finoa GmbH</p>
     <p>Okta SSO and MFA for 100+ employees, ServiceNow workflows that route tickets automatically, the company-wide Claude AI rollout, onboarding and offboarding, and the hardware lifecycle of a mixed macOS and Windows fleet in JumpCloud. Joined as an intern in September 2025.</p></div></div>
-  <div class="xp"><div class="when">Mar 2022 – Feb 2024<br>Bahawalpur</div><div class="what">
+  <div class="xp"><div class="when">Mar 2022 – Feb 2024</div><div class="what">
     <h3>IT Support Engineer</h3><p class="org">Enliven AI Solutions</p>
     <p>Network troubleshooting, Active Directory and Microsoft 365 administration, workstation support and Python reports that replaced manual log review.</p></div></div>
-  <div class="xp"><div class="when">Jan 2020 – Dec 2021<br>Islamabad</div><div class="what">
+  <div class="xp"><div class="when">Jan 2020 – Dec 2021</div><div class="what">
     <h3>IT Support Technician</h3><p class="org">Allied Schools</p>
     <p>Office network and printers, service desk and desktop support, staff onboarding and the IT knowledge base.</p></div></div>
 </div></section>
@@ -315,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="contact" style="padding-top:0"><div class="wrap">
   <div class="contact">
-    <div><h2>Let's talk.</h2><p>I'm looking for IT support, IT operations and identity roles in Berlin or remote. The quickest way to reach me is email.</p></div>
+    <div><h2>Let's talk.</h2><p>I'm looking for IT support, IT operations and identity roles, on-site or remote. The quickest way to reach me is email.</p></div>
     <div class="links">
       <a href="mailto:hamzaa.hashmii@gmail.com">Email<small>hamzaa.hashmii@gmail.com</small></a>
       <a href="https://www.linkedin.com/in/muhammad-hamza-9b2098296">LinkedIn<small>muhammad-hamza</small></a>
