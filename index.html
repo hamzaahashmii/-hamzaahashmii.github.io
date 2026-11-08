@@ -3,181 +3,287 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muhammad Hamza · IT Support Engineer, Berlin</title>
-<meta name="description" content="Muhammad Hamza, IT Support Engineer in Berlin. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Muhammad Hamza – IT Support Engineer, Berlin</title>
+<meta name="description" content="IT Support Engineer in Berlin. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud. Home labs on SSO and device management.">
+<meta property="og:title" content="Muhammad Hamza – IT Support Engineer, Berlin">
+<meta property="og:description" content="Identity, devices and end-user support. Home labs on single sign-on with Entra ID and device management with Intune.">
+<meta property="og:image" content="https://hamzalab.de/images/og.png">
+<meta property="og:url" content="https://hamzalab.de">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2315233B'/><text x='50%' y='58%' font-family='Arial' font-weight='700' font-size='30' fill='%234C8DFF' text-anchor='middle'>MH</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#15233B; --paper:#F6F7F9; --surface:#FFFFFF; --line:#DDE2E9; --muted:#5A6576;
-  --ok:#23704F; --ok-bg:#E5F2EB; --accent:#2D5BA8;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --night:#0D1829; --night2:#14223A; --edge:#27385A; --fog:#9FB0C8;
+  --paper:#F4F6FA; --surface:#FFFFFF; --ink:#13213A; --muted:#5A677C; --line:#DEE3EC;
+  --signal:#4C8DFF; --ok:#3DD68C; --warn:#F2B544;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{color-scheme:dark; --ink:#E7ECF3; --paper:#0F1726; --surface:#16213A; --line:#27324A; --muted:#9AA6B8;
-    --ok:#6FD3A3; --ok-bg:#16352A; --accent:#8BB0F2;}
-}
+@media (prefers-color-scheme: dark){:root{color-scheme:dark;--paper:#0F1A2C;--surface:#152238;--ink:#E6ECF5;--muted:#9AA8BD;--line:#24324C}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
-a{color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-.01em}
-nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px}
-nav a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:88px 0 72px}
-.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;font-weight:700}
-.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 28px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px}
-.btn.primary{background:var(--ink);color:var(--paper)}
-.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--surface)}
-/* the sign-in log entry: the one memorable element */
-.log{background:var(--surface);border:1px solid var(--line);border-radius:14px;font-family:var(--mono);font-size:13.5px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(21,35,59,.35)}
-.log .bar{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12.5px}
-.log dl{margin:0;padding:8px 16px 14px;display:grid;grid-template-columns:auto 1fr;column-gap:18px}
-.log dt{color:var(--muted);padding:6px 0}
-.log dd{margin:0;padding:6px 0;opacity:0;transform:translateY(4px);animation:in .35s ease forwards}
-.log dd:nth-of-type(1){animation-delay:.15s}.log dd:nth-of-type(2){animation-delay:.35s}.log dd:nth-of-type(3){animation-delay:.55s}
-.log dd:nth-of-type(4){animation-delay:.75s}.log dd:nth-of-type(5){animation-delay:.95s}.log dd:nth-of-type(6){animation-delay:1.25s}
-.status{display:inline-block;background:var(--ok-bg);color:var(--ok);padding:1px 10px;border-radius:999px;font-weight:500}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(13,24,41,.86);backdrop-filter:blur(10px);border-color:var(--edge)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--signal);display:grid;place-items:center;font-style:normal;font-size:14px;color:#0D1829;font-weight:800}
+.nav nav a{color:var(--fog);text-decoration:none;margin-left:26px;font-size:15px;font-weight:500}
+.nav nav a:hover{color:#fff}
+
+/* hero */
+.hero{background:var(--night);color:#E8EEF7;position:relative;overflow:hidden;padding:150px 0 110px}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--edge) 1px,transparent 1px),linear-gradient(90deg,var(--edge) 1px,transparent 1px);background-size:56px 56px;opacity:.28;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;color:var(--fog);margin-bottom:22px}
+.avail b{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(61,214,140,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,214,140,0)}100%{box-shadow:0 0 0 0 rgba(61,214,140,0)}}
+.hero h1{font-size:clamp(40px,5.6vw,66px);line-height:1.04;letter-spacing:-.035em;margin:0 0 24px;font-weight:800;color:#fff}
+.hero .lead{font-size:19px;color:#B9C6D9;max-width:31em;margin:0 0 34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15.5px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--signal);color:#0D1829}
+.btn.line{border:1px solid var(--edge);color:#E8EEF7;background:rgba(255,255,255,.03)}
+.facts{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap}
+.facts div{font-size:14.5px;color:var(--fog)}
+.facts strong{display:block;color:#fff;font-size:22px;letter-spacing:-.01em}
+
+/* the signature: a live sign-in flow */
+.flow{background:var(--night2);border:1px solid var(--edge);border-radius:20px;padding:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.flow .head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--fog);margin-bottom:18px}
+.nodes{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px;margin-bottom:20px}
+.node{border:1px solid var(--edge);border-radius:14px;padding:12px 10px;text-align:center;background:#101C30}
+.node span{display:block;font-size:12px;color:var(--fog)}
+.node strong{font-size:14.5px;color:#fff}
+.node.idp{border-color:var(--signal);box-shadow:0 0 0 4px rgba(76,141,255,.12)}
+.wire{width:34px;height:2px;background:var(--edge);position:relative;overflow:hidden}
+.wire::after{content:"";position:absolute;inset:0;width:40%;background:var(--signal);animation:run 1.6s linear infinite}
+@keyframes run{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
+.checks{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:14px}
+.checks li{display:flex;justify-content:space-between;gap:12px;padding:10px 4px;border-top:1px dashed var(--edge);opacity:0;transform:translateY(6px);animation:in .4s ease forwards}
+.checks li:nth-child(1){animation-delay:.4s}.checks li:nth-child(2){animation-delay:.9s}.checks li:nth-child(3){animation-delay:1.4s}.checks li:nth-child(4){animation-delay:1.9s}.checks li:nth-child(5){animation-delay:2.5s}
+.checks em{font-style:normal;color:var(--ok)}
+.checks li:last-child{color:#fff;font-weight:500}
+.checks li:last-child em{background:rgba(61,214,140,.14);padding:0 12px;border-radius:999px}
 @keyframes in{to{opacity:1;transform:none}}
-section{padding:64px 0;border-top:1px solid var(--line)}
-h2{font-size:30px;letter-spacing:-.02em;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 32px;max-width:40em}
-.projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
-.project h3{margin:0 0 6px;font-size:21px;letter-spacing:-.01em}
-.project .stack{color:var(--muted);font-size:14.5px;margin:0 0 14px}
-.project ul{margin:0 0 18px;padding-left:20px}
-.project li{margin-bottom:6px}
-.project a.more{font-weight:600;text-decoration:none}
-.project a.more:hover{text-decoration:underline}
-.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
-.timeline li{position:relative;padding:0 0 28px 26px}
-.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
-.timeline li:first-child::before{background:var(--accent)}
-.timeline h3{margin:0;font-size:19px}
-.timeline .when{color:var(--muted);font-size:15px;margin:2px 0 8px}
-.timeline p{margin:0;max-width:44em}
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
-.skills h3{font-size:16px;margin:0 0 6px}
-.skills p{margin:0;color:var(--muted);font-size:15.5px}
-.resume{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:14.5px}
-.contact{display:flex;gap:24px;flex-wrap:wrap;font-size:17px}
-@media (max-width:860px){
-  .hero{grid-template-columns:1fr;gap:36px;padding:56px 0 48px}
-  .projects{grid-template-columns:1fr}
-  .skills{grid-template-columns:1fr 1fr}
-  nav a:not(.keep){display:none}
+
+/* sections */
+section{padding:104px 0}
+.title{max-width:40em;margin-bottom:46px}
+.title h2{font-size:clamp(30px,3.6vw,42px);letter-spacing:-.03em;line-height:1.1;margin:0 0 12px}
+.title p{color:var(--muted);margin:0;font-size:18px}
+
+/* projects */
+.project{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;margin-bottom:72px}
+.project:last-child{margin-bottom:0}
+.project.flip{grid-template-columns:.85fr 1.15fr}
+.project.flip .shot{order:2}
+.shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -36px rgba(19,33,58,.45);transition:transform .25s}
+.shot:hover{transform:translateY(-4px)}
+.project h3{font-size:28px;letter-spacing:-.02em;margin:0 0 12px;line-height:1.2}
+.project p{color:var(--muted);margin:0 0 18px}
+.project ul{margin:0 0 22px;padding:0;list-style:none}
+.project li{padding:7px 0 7px 26px;position:relative}
+.project li::before{content:"";position:absolute;left:0;top:15px;width:12px;height:2px;background:var(--signal)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chips span{font-size:13.5px;padding:5px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.link{font-weight:700;color:var(--signal);text-decoration:none}
+.link:hover{text-decoration:underline}
+
+/* fixes */
+.fixes{background:var(--night);color:#E8EEF7}
+.fixes .title p{color:var(--fog)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fix{background:var(--night2);border:1px solid var(--edge);border-radius:16px;padding:22px}
+.fix code{font-family:var(--mono);font-size:13px;color:var(--warn);background:rgba(242,181,68,.1);padding:3px 9px;border-radius:6px}
+.fix h4{margin:14px 0 8px;font-size:17px;color:#fff;line-height:1.35}
+.fix p{margin:0;color:var(--fog);font-size:15px}
+
+/* experience */
+.xp{display:grid;grid-template-columns:240px 1fr;border-top:1px solid var(--line)}
+.xp:last-child{border-bottom:1px solid var(--line)}
+.xp .when{padding:28px 0;color:var(--muted);font-size:15px}
+.xp .what{padding:28px 0}
+.xp h3{margin:0 0 4px;font-size:21px;letter-spacing:-.01em}
+.xp .org{color:var(--signal);font-weight:600;margin:0 0 10px;font-size:15.5px}
+.xp p{margin:0;color:var(--muted);max-width:46em}
+.promo{display:inline-block;margin-left:8px;font-size:12.5px;font-weight:700;color:#0D1829;background:var(--ok);padding:2px 10px;border-radius:999px;vertical-align:middle}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.skill h3{font-size:17px;margin:0 0 12px}
+.skill .chips{margin:0}
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.edu div{padding:20px 22px;border-left:3px solid var(--signal);background:var(--surface);border-radius:0 14px 14px 0}
+.edu strong{display:block;font-size:16px}
+.edu span{color:var(--muted);font-size:14.5px}
+
+/* contact */
+.contact{background:linear-gradient(135deg,#13254A,#0D1829);color:#fff;border-radius:26px;padding:64px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.contact h2{font-size:clamp(30px,3.6vw,42px);letter-spacing:-.03em;line-height:1.1;margin:0 0 14px}
+.contact p{color:#B9C6D9;margin:0}
+.links{display:grid;gap:12px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border:1px solid var(--edge);border-radius:14px;text-decoration:none;color:#fff;font-weight:600;background:rgba(255,255,255,.03);transition:border-color .2s}
+.links a:hover{border-color:var(--signal)}
+.links small{color:var(--fog);font-weight:500}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:920px){
+  .hero{padding:120px 0 80px}
+  .hero .wrap,.project,.project.flip,.contact{grid-template-columns:1fr}
+  .project.flip .shot{order:0}
+  .grid3,.skills,.edu{grid-template-columns:1fr 1fr}
+  .xp{grid-template-columns:1fr}.xp .when{padding:24px 0 0}.xp .what{padding:6px 0 24px}
+  .nav nav a:not(.keep){display:none}
+  .contact{padding:40px 28px}
 }
-@media (max-width:520px){.skills{grid-template-columns:1fr}body{font-size:16px}}
+@media (max-width:560px){
+  .grid3,.skills,.edu{grid-template-columns:1fr}
+  .wire{width:16px}
+  .node{padding:10px 6px}.node strong{font-size:13px}
+  section{padding:76px 0}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.checks li{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="#">Muhammad Hamza</a>
-  <nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a class="keep" href="#resume">Resume</a></nav>
+<header class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="#top"><i>MH</i>Muhammad Hamza</a>
+  <nav aria-label="Main"><a href="#projects">Projects</a><a href="#fixes">Troubleshooting</a><a href="#experience">Experience</a><a class="keep" href="#contact">Contact</a></nav>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <div>
-      <h1>I keep people signed in, secure and working.</h1>
-      <p class="lead">IT Support Engineer in Berlin, supporting 100+ employees at a regulated financial-services company. I work across identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud.</p>
-      <div class="btns">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn ghost" href="resume.pdf" download>Download resume</a>
-      </div>
-    </div>
-    <div class="log" role="img" aria-label="An example sign-in log entry from my Entra ID lab: Omar signed in to Atlassian Cloud with single sign-on, MFA satisfied, sign-in successful.">
-      <div class="bar"><span>Sign-in log</span><span>hamzalab.de</span></div>
-      <dl>
-        <dt>User</dt><dd>omar@hamzalab.de</dd>
-        <dt>Application</dt><dd>Atlassian Cloud</dd>
-        <dt>Protocol</dt><dd>SAML 2.0, SSO enforced</dd>
-        <dt>Method</dt><dd>Microsoft Authenticator</dd>
-        <dt>Policy</dt><dd>MFA required</dd>
-        <dt>Result</dt><dd><span class="status">Success</span></dd>
-      </dl>
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="avail"><b></b>Open to IT support, IT operations and identity roles in Berlin</div>
+    <h1>I keep people signed in, secure and working.</h1>
+    <p class="lead">IT Support Engineer at a regulated financial-services company in Berlin. I look after identity, devices and day-to-day support for 100+ employees, and build home labs to go deeper.</p>
+    <div class="cta"><a class="btn main" href="#projects">See my projects</a><a class="btn line" href="resume.pdf" download>Download resume</a></div>
+    <div class="facts">
+      <div><strong>100+</strong>employees supported</div>
+      <div><strong>3 months</strong>from intern to engineer</div>
+      <div><strong>Since 2020</strong>in IT support</div>
     </div>
   </div>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <p class="sub">Home labs I built in my own Microsoft tenant to practise what companies run in production. Each one is documented step by step on GitHub, including the problems I hit and how I fixed them.</p>
-    <div class="projects">
-      <article class="project">
-        <h3>Single sign-on with Microsoft Entra ID</h3>
-        <p class="stack">Entra ID, SAML, OIDC, Atlassian Guard, Conditional Access, PIM</p>
-        <ul>
-          <li>SAML and OIDC SSO for a test app, a custom app and Atlassian Cloud on my own verified domain, with SSO enforced</li>
-          <li>Passwordless sign-in with passkeys and one-time Temporary Access Passes</li>
-          <li>App-specific Conditional Access, risk-based policies, PIM and access reviews</li>
-        </ul>
-        <a class="more" href="https://github.com/hamzaahashmii/entra-sso-lab">Read the lab on GitHub</a>
-      </article>
-      <article class="project">
-        <h3>Device management with Microsoft Intune</h3>
-        <p class="stack">Intune, Entra join, Windows 11, BitLocker, Conditional Access</p>
-        <ul>
-          <li>Windows 11 enrolled through Entra join, with compliance and configuration profiles</li>
-          <li>Silent BitLocker, a security baseline and a packaged Win32 app deployment</li>
-          <li>Device onboarding, offboarding and remote wipe</li>
-        </ul>
-        <a class="more" href="https://github.com/hamzaahashmii/Intune-MDM-HomeLab">Read the lab on GitHub</a>
-      </article>
+  <div class="flow" role="img" aria-label="A sign-in from my lab: a user on a laptop goes through Microsoft Entra ID to Atlassian. Password checked, passkey used, Conditional Access passed, SAML token issued, signed in.">
+    <div class="head"><span>Live from my lab</span><span>hamzalab.de</span></div>
+    <div class="nodes">
+      <div class="node"><span>User</span><strong>Laptop</strong></div><div class="wire"></div>
+      <div class="node idp"><span>Identity</span><strong>Entra ID</strong></div><div class="wire"></div>
+      <div class="node"><span>App</span><strong>Atlassian</strong></div>
     </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <p class="sub">IT support across Germany and Pakistan since 2020.</p>
-    <ol class="timeline">
-      <li><h3>IT Support Engineer, Finoa GmbH</h3><p class="when">Berlin · Dec 2025 to present (intern from Sep 2025, promoted after 3 months)</p>
-        <p>Okta SSO and MFA for 100+ employees, ServiceNow workflows that route tickets automatically, the company-wide Claude AI rollout, onboarding and offboarding, and the hardware lifecycle for a mixed macOS and Windows fleet in JumpCloud.</p></li>
-      <li><h3>IT Support Engineer, Enliven AI Solutions</h3><p class="when">Bahawalpur · Mar 2022 to Feb 2024</p>
-        <p>Network troubleshooting, Active Directory and Microsoft 365 administration, workstation support and Python reports that replaced manual log review.</p></li>
-      <li><h3>IT Support Technician, Allied Schools</h3><p class="when">Islamabad · Jan 2020 to Dec 2021</p>
-        <p>Office network and printers, service desk and desktop support, staff onboarding and the IT knowledge base.</p></li>
+    <ol class="checks">
+      <li>Identity verified<em>✓</em></li>
+      <li>MFA with Microsoft Authenticator<em>✓</em></li>
+      <li>Conditional Access policies<em>passed</em></li>
+      <li>SAML assertion signed<em>✓</em></li>
+      <li>Signed in to Jira<em>Success</em></li>
     </ol>
-  </section>
+  </div>
+</div></div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p class="sub">MSc Information and Communication Engineering at Berliner Hochschule für Technik. AZ-900 certified.</p>
-    <div class="skills">
-      <div><h3>Identity and access</h3><p>Okta, Microsoft Entra ID, Active Directory, Google Workspace, Microsoft 365, SSO, MFA, least privilege</p></div>
-      <div><h3>Devices</h3><p>JumpCloud, Microsoft Intune, macOS and Windows, hardware lifecycle, compliance</p></div>
-      <div><h3>Service management</h3><p>ServiceNow workflows, Jira, Confluence, knowledge bases</p></div>
-      <div><h3>Networking</h3><p>TCP/IP, DNS, DHCP, VPN, wireless, ping, traceroute, nslookup</p></div>
-      <div><h3>Collaboration</h3><p>Slack administration, Claude AI admin and connectors, meeting-room AV</p></div>
-      <div><h3>Automation</h3><p>Python, SQL, GitHub</p></div>
+<section id="projects"><div class="wrap">
+  <div class="title"><h2>Projects</h2><p>Home labs in my own Microsoft tenant, built the way companies run them in production and documented step by step on GitHub, problems included.</p></div>
+
+  <article class="project">
+    <a class="shot" href="https://github.com/hamzaahashmii/entra-sso-lab"><img src="images/sso.png" alt="Preview of the Entra ID single sign-on lab" width="1280" height="640" loading="lazy"></a>
+    <div>
+      <h3>Single sign-on with Microsoft Entra ID</h3>
+      <p>From the first SAML app to SSO enforced on a real SaaS product, then hardened with passwordless sign-in and Conditional Access.</p>
+      <ul>
+        <li>SAML and OIDC apps, and Atlassian Cloud on my own verified domain</li>
+        <li>Passkeys with Touch ID and one-time Temporary Access Passes</li>
+        <li>Phishing-resistant and compliant-device policies, PIM and access reviews</li>
+      </ul>
+      <div class="chips"><span>Entra ID</span><span>SAML</span><span>OIDC</span><span>Atlassian Guard</span><span>Conditional Access</span><span>PIM</span></div>
+      <a class="link" href="https://github.com/hamzaahashmii/entra-sso-lab">Read the lab on GitHub</a>
     </div>
-  </section>
+  </article>
 
-  <section id="resume" class="resume">
-    <div><h2>Resume</h2><p class="sub" style="margin:0">Two pages, updated November 2026.</p></div>
-    <div class="btns"><a class="btn primary" href="resume.pdf" download>Download PDF</a><a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Open in browser</a></div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="sub">Open to IT support, IT operations and identity roles in Berlin or remote.</p>
-    <div class="contact">
-      <a href="mailto:hamzaa.hashmii@gmail.com">hamzaa.hashmii@gmail.com</a>
-      <a href="https://www.linkedin.com/in/muhammad-hamza-9b2098296">LinkedIn</a>
-      <a href="https://github.com/hamzaahashmii">GitHub</a>
+  <article class="project flip">
+    <a class="shot" href="https://github.com/hamzaahashmii/Intune-MDM-HomeLab"><img src="images/mdm.png" alt="Preview of the Intune device management lab" width="1280" height="640" loading="lazy"></a>
+    <div>
+      <h3>Device management with Microsoft Intune</h3>
+      <p>A Windows 11 laptop taken from first boot to fully managed, compliant and protected, then offboarded and wiped.</p>
+      <ul>
+        <li>Entra join, compliance policies and configuration profiles</li>
+        <li>Silent BitLocker, a security baseline and a packaged Win32 app</li>
+        <li>Conditional Access for compliant devices, onboarding and offboarding</li>
+      </ul>
+      <div class="chips"><span>Intune</span><span>Entra join</span><span>Windows 11</span><span>BitLocker</span><span>Win32 apps</span></div>
+      <a class="link" href="https://github.com/hamzaahashmii/Intune-MDM-HomeLab">Read the lab on GitHub</a>
     </div>
-  </section>
+  </article>
+</div></section>
+
+<section class="fixes" id="fixes"><div class="wrap">
+  <div class="title"><h2>Problems I've solved</h2><p>The part of the work I enjoy most: reading the error, finding the cause, fixing it properly. A few from my labs.</p></div>
+  <div class="grid3">
+    <div class="fix"><code>AADSTS50011</code><h4>Reply URL mismatch</h4><p>The app gave each configuration its own ACS URL. Copied the exact value from the app instead of the generic guide.</p></div>
+    <div class="fix"><code>Invalid thumbprint</code><h4>Atlassian rejected the sign-in</h4><p>The certificate in Atlassian didn't match Entra's signing certificate. Re-exported the active one from the right app.</p></div>
+    <div class="fix"><code>AADSTS50057</code><h4>"Locked" account, no sign-in logs</h4><p>The user had been disabled in an earlier offboarding. Re-enabled, checked audit logs, ran the rehire checklist.</p></div>
+    <div class="fix"><code>AADSTS50105</code><h4>User can't open the app</h4><p>Signed in fine, but not assigned. Fixed with the right group, not by turning off assignment.</p></div>
+    <div class="fix"><code>Permanent</code><h4>Admin role that never expired</h4><p>A PIM assignment had been made active instead of eligible. Replaced it with a one-hour, just-in-time activation.</p></div>
+    <div class="fix"><code>Report-only</code><h4>Policy didn't seem to apply</h4><p>The test was hitting another app's session. Used What If, then a clean private-window test to prove it.</p></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="title"><h2>Experience</h2><p>IT support across Germany and Pakistan since 2020.</p></div>
+  <div class="xp"><div class="when">Dec 2025 – present<br>Berlin</div><div class="what">
+    <h3>IT Support Engineer <span class="promo">Promoted</span></h3><p class="org">Finoa GmbH</p>
+    <p>Okta SSO and MFA for 100+ employees, ServiceNow workflows that route tickets automatically, the company-wide Claude AI rollout, onboarding and offboarding, and the hardware lifecycle of a mixed macOS and Windows fleet in JumpCloud. Joined as an intern in September 2025.</p></div></div>
+  <div class="xp"><div class="when">Mar 2022 – Feb 2024<br>Bahawalpur</div><div class="what">
+    <h3>IT Support Engineer</h3><p class="org">Enliven AI Solutions</p>
+    <p>Network troubleshooting, Active Directory and Microsoft 365 administration, workstation support and Python reports that replaced manual log review.</p></div></div>
+  <div class="xp"><div class="when">Jan 2020 – Dec 2021<br>Islamabad</div><div class="what">
+    <h3>IT Support Technician</h3><p class="org">Allied Schools</p>
+    <p>Office network and printers, service desk and desktop support, staff onboarding and the IT knowledge base.</p></div></div>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+  <div class="title"><h2>Skills</h2></div>
+  <div class="skills">
+    <div class="skill"><h3>Identity and access</h3><div class="chips"><span>Okta</span><span>Entra ID</span><span>Active Directory</span><span>Google Workspace</span><span>Microsoft 365</span><span>SSO and MFA</span></div></div>
+    <div class="skill"><h3>Devices</h3><div class="chips"><span>JumpCloud</span><span>Intune</span><span>macOS</span><span>Windows</span><span>Asset lifecycle</span></div></div>
+    <div class="skill"><h3>Service management</h3><div class="chips"><span>ServiceNow</span><span>Jira</span><span>Confluence</span><span>Knowledge bases</span></div></div>
+    <div class="skill"><h3>Networking</h3><div class="chips"><span>TCP/IP</span><span>DNS</span><span>DHCP</span><span>VPN</span><span>Wireless</span></div></div>
+    <div class="skill"><h3>Collaboration</h3><div class="chips"><span>Slack admin</span><span>Claude AI admin</span><span>Meeting-room AV</span></div></div>
+    <div class="skill"><h3>Automation</h3><div class="chips"><span>Python</span><span>SQL</span><span>GitHub</span></div></div>
+  </div>
+  <div class="edu">
+    <div><strong>MSc Information and Communication Engineering</strong><span>Berliner Hochschule für Technik · since 2024</span></div>
+    <div><strong>BSc Computer Systems Engineering</strong><span>The Islamia University Bahawalpur · 2019</span></div>
+    <div><strong>AZ-900 Azure Fundamentals</strong><span>English C1 · German A2</span></div>
+  </div>
+</div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap">
+  <div class="contact">
+    <div><h2>Let's talk.</h2><p>I'm looking for IT support, IT operations and identity roles in Berlin or remote. The quickest way to reach me is email.</p></div>
+    <div class="links">
+      <a href="mailto:hamzaa.hashmii@gmail.com">Email<small>hamzaa.hashmii@gmail.com</small></a>
+      <a href="https://www.linkedin.com/in/muhammad-hamza-9b2098296">LinkedIn<small>muhammad-hamza</small></a>
+      <a href="https://github.com/hamzaahashmii">GitHub<small>hamzaahashmii</small></a>
+      <a href="resume.pdf" download>Resume<small>PDF, 2 pages</small></a>
+    </div>
+  </div>
+</div></section>
 </main>
-<footer><div class="wrap">© 2026 Muhammad Hamza</div></footer>
+<footer><div class="wrap"><span>© 2026 Muhammad Hamza</span><span>Hosted on GitHub Pages at hamzalab.de</span></div></footer>
+<script>
+const nav=document.getElementById('nav');const f=()=>nav.classList.toggle('solid',scrollY>40);addEventListener('scroll',f,{passive:true});f();
+</script>
 </body>
 </html>
