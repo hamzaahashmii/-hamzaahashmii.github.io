@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muhammad Hamza – IT Support Engineer, Berlin</title>
+<title>Muhammad Hamza – IT Support &amp; Operations Engineer, Berlin</title>
 <meta name="description" content="IT Support Engineer in Berlin. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud. Home labs on SSO and device management.">
-<meta property="og:title" content="Muhammad Hamza – IT Support Engineer, Berlin">
+<meta property="og:title" content="Muhammad Hamza – IT Support &amp; Operations Engineer, Berlin">
 <meta property="og:description" content="Identity, devices and end-user support. Home labs on single sign-on with Entra ID and device management with Intune.">
 <meta property="og:image" content="https://hamzalab.de/images/og.png">
 <meta property="og:url" content="https://hamzalab.de">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2315233B'/><text x='50%' y='58%' font-family='Arial' font-weight='700' font-size='30' fill='%234C8DFF' text-anchor='middle'>MH</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><defs><linearGradient id='lg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%238B6BFF'/><stop offset='.55' stop-color='%234C8DFF'/><stop offset='1' stop-color='%2319C6B6'/></linearGradient></defs><path d='M24 3 42 9v13c0 11.5-7.6 19.6-18 23C13.6 41.6 6 33.5 6 22V9z' fill='url(%23lg)'/><path d='M15 31V17l5 7 4-7 4 7 5-7v14' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>"><rect width='64' height='64' rx='14' fill='%2315233B'/><text x='50%' y='58%' font-family='Arial' font-weight='700' font-size='30' fill='%234C8DFF' text-anchor='middle'>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -25,7 +25,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -35,7 +35,7 @@ a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius
 .nav.solid{background:rgba(13,24,41,.86);backdrop-filter:blur(10px);border-color:var(--edge)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700}
-.logo i{width:34px;height:34px;border-radius:10px;background:var(--signal);display:grid;place-items:center;font-style:normal;font-size:14px;color:#0D1829;font-weight:800}
+.logo .mark{width:38px;height:38px;flex:none;filter:drop-shadow(0 6px 14px rgba(139,107,255,.45))}.wm{display:flex;flex-direction:column;line-height:1.15}.wm b{font-size:16px}.wm small{font-size:12px;color:var(--fog);font-weight:500;letter-spacing:.01em}
 .nav nav a{color:var(--fog);text-decoration:none;margin-left:26px;font-size:15px;font-weight:500}
 .nav nav a:hover{color:#fff}
 
@@ -57,7 +57,17 @@ a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius
 .facts div{font-size:14.5px;color:var(--fog)}
 .facts strong{display:block;color:#fff;font-size:22px;letter-spacing:-.01em}
 
-/* the signature: a live sign-in flow */
+.who{margin-bottom:26px}.who strong{display:block;font-size:clamp(26px,3vw,34px);color:#fff;letter-spacing:-.02em;line-height:1.2}.who span{display:block;font-size:18px;color:#C9D4E5;margin-top:4px;font-weight:500}
+
+/* animated IT activity in the hero background */
+.feed{position:absolute;top:0;bottom:0;right:0;width:52%;display:flex;gap:18px;justify-content:flex-end;padding-right:2%;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%),linear-gradient(transparent,#000 15%,#000 85%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 35%),linear-gradient(transparent,#000 15%,#000 85%,transparent);mask-composite:intersect}
+.feed ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;animation:drift 46s linear infinite;opacity:.22}
+.feed .c2{animation-duration:58s;animation-direction:reverse;opacity:.16;margin-top:-120px}
+.feed li{display:flex;align-items:center;gap:10px;white-space:nowrap;font-family:var(--mono);font-size:13px;color:#DCE5F2;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 14px}
+.feed li i{width:8px;height:8px;border-radius:50%;flex:none}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media (max-width:920px){.feed{width:100%}.feed .c2{display:none}.feed ul{opacity:.1}}
+/* the signature: a sign-in flow */
 .flow{background:var(--night2);border:1px solid var(--edge);border-radius:20px;padding:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
 .flow .head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--fog);margin-bottom:18px}
 .nodes{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px;margin-bottom:20px}
@@ -155,18 +165,52 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   section{padding:76px 0}
 }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.checks li{opacity:1;transform:none}}
+
+/* ---------- colour layer ---------- */
+:root{--violet:#8B6BFF;--blue:#4C8DFF;--teal:#19C6B6;--green:#3DD68C;--amber:#F5B740;--coral:#FF6F91}
+.hero{background:radial-gradient(900px 560px at 88% 8%,rgba(139,107,255,.62),transparent 60%),radial-gradient(760px 520px at 0% 100%,rgba(25,198,182,.5),transparent 60%),radial-gradient(520px 360px at 60% 95%,rgba(255,111,145,.32),transparent 65%),radial-gradient(600px 400px at 40% 30%,rgba(76,141,255,.22),transparent 65%),var(--night)}
+
+.btn.main{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;box-shadow:0 12px 30px -12px rgba(139,107,255,.7)}
+.facts div:nth-child(1) strong{color:var(--teal)}
+.facts div:nth-child(2) strong{color:var(--violet)}
+.facts div:nth-child(3) strong{color:var(--amber)}
+.flow{position:relative;border:1px solid transparent;background:linear-gradient(var(--night2),var(--night2)) padding-box,linear-gradient(135deg,var(--violet),var(--blue),var(--teal)) border-box}
+.node.idp{border-color:var(--violet);box-shadow:0 0 0 4px rgba(139,107,255,.18)}
+.wire::after{background:linear-gradient(90deg,var(--teal),var(--violet))}
+.title h2::after{content:"";display:block;width:64px;height:5px;border-radius:5px;margin-top:14px;background:linear-gradient(90deg,var(--violet),var(--blue),var(--teal))}
+.project:nth-of-type(1){--c:var(--violet)}
+.project:nth-of-type(2){--c:var(--teal)}
+.project li::before{background:var(--c);height:3px;border-radius:3px}
+.project .link{color:var(--c)}
+.project .chips span{border-color:color-mix(in srgb,var(--c) 35%,transparent);background:color-mix(in srgb,var(--c) 10%,var(--surface));color:var(--ink)}
+.project .shot{box-shadow:0 30px 60px -30px color-mix(in srgb,var(--c) 70%,transparent)}
+.fixes{background:radial-gradient(700px 400px at 100% 0%,rgba(255,111,145,.18),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(76,141,255,.2),transparent 60%),var(--night)}
+.fix{--c:var(--amber);border-top:3px solid var(--c)}
+.fix:nth-child(2){--c:var(--coral)}.fix:nth-child(3){--c:var(--violet)}.fix:nth-child(4){--c:var(--teal)}.fix:nth-child(5){--c:var(--blue)}.fix:nth-child(6){--c:var(--green)}
+.fix code{color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.xp .org{color:var(--violet)}
+.xp:nth-of-type(3) .org{color:var(--teal)}
+.xp:nth-of-type(4) .org{color:var(--coral)}
+.skill{--c:var(--violet);border-top:4px solid var(--c)}
+.skill:nth-child(2){--c:var(--teal)}.skill:nth-child(3){--c:var(--amber)}.skill:nth-child(4){--c:var(--blue)}.skill:nth-child(5){--c:var(--coral)}.skill:nth-child(6){--c:var(--green)}
+.skill .chips span{background:color-mix(in srgb,var(--c) 12%,var(--surface));border-color:color-mix(in srgb,var(--c) 30%,transparent);color:var(--ink)}
+.edu div:nth-child(1){border-color:var(--violet)}.edu div:nth-child(2){border-color:var(--teal)}.edu div:nth-child(3){border-color:var(--amber)}
+.contact{background:radial-gradient(500px 300px at 90% 10%,rgba(25,198,182,.45),transparent 60%),linear-gradient(135deg,#3B2A8C,#1D3F9E 55%,#0E5C78)}
+.links a{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.07)}
+.links a:hover{border-color:#fff;background:rgba(255,255,255,.12)}
 </style>
 </head>
 <body>
 <header class="nav" id="nav"><div class="wrap">
-  <a class="logo" href="#top"><i>MH</i>Muhammad Hamza</a>
+  <a class="logo" href="#top" aria-label="Muhammad Hamza, home"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B6BFF"/><stop offset=".55" stop-color="#4C8DFF"/><stop offset="1" stop-color="#19C6B6"/></linearGradient></defs><path d="M24 3 42 9v13c0 11.5-7.6 19.6-18 23C13.6 41.6 6 33.5 6 22V9z" fill="url(#lg)"/><path d="M15 31V17l5 7 4-7 4 7 5-7v14" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wm"><b>Muhammad Hamza</b><small>IT Support &amp; Operations</small></span></a>
   <nav aria-label="Main"><a href="#projects">Projects</a><a href="#fixes">Troubleshooting</a><a href="#experience">Experience</a><a class="keep" href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top">
-<div class="hero"><div class="wrap">
+<div class="hero"><div class="feed" aria-hidden="true"><ul class="c1"><li><i style="background:#3DD68C"></i>Ticket INC-1042 resolved</li><li><i style="background:#4C8DFF"></i>MacBook enrolled in JumpCloud</li><li><i style="background:#8B6BFF"></i>MFA reset for a new joiner</li><li><i style="background:#F5B740"></i>VPN fixed: DNS lookup</li><li><i style="background:#19C6B6"></i>Okta access granted to Jira</li><li><i style="background:#3DD68C"></i>Onboarding done: laptop, accounts, training</li><li><i style="background:#8B6BFF"></i>Passkey registered</li><li><i style="background:#F5B740"></i>Printer back online</li><li><i style="background:#3DD68C"></i>Ticket INC-1042 resolved</li><li><i style="background:#4C8DFF"></i>MacBook enrolled in JumpCloud</li><li><i style="background:#8B6BFF"></i>MFA reset for a new joiner</li><li><i style="background:#F5B740"></i>VPN fixed: DNS lookup</li><li><i style="background:#19C6B6"></i>Okta access granted to Jira</li><li><i style="background:#3DD68C"></i>Onboarding done: laptop, accounts, training</li><li><i style="background:#8B6BFF"></i>Passkey registered</li><li><i style="background:#F5B740"></i>Printer back online</li></ul><ul class="c2"><li><i style="background:#FF6F91"></i>Leaver offboarded, device wiped</li><li><i style="background:#4C8DFF"></i>Conditional Access policy passed</li><li><i style="background:#19C6B6"></i>Wi-Fi issue solved: DHCP lease</li><li><i style="background:#3DD68C"></i>Ticket INC-1043 resolved</li><li><i style="background:#4C8DFF"></i>Win32 app deployed via Intune</li><li><i style="background:#8B6BFF"></i>BitLocker key escrowed</li><li><i style="background:#3DD68C"></i>Access review completed</li><li><i style="background:#F5B740"></i>Meeting-room AV ready</li><li><i style="background:#FF6F91"></i>Leaver offboarded, device wiped</li><li><i style="background:#4C8DFF"></i>Conditional Access policy passed</li><li><i style="background:#19C6B6"></i>Wi-Fi issue solved: DHCP lease</li><li><i style="background:#3DD68C"></i>Ticket INC-1043 resolved</li><li><i style="background:#4C8DFF"></i>Win32 app deployed via Intune</li><li><i style="background:#8B6BFF"></i>BitLocker key escrowed</li><li><i style="background:#3DD68C"></i>Access review completed</li><li><i style="background:#F5B740"></i>Meeting-room AV ready</li></ul></div><div class="wrap">
   <div>
-    <div class="avail"><b></b>Open to IT support, IT operations and identity roles in Berlin</div>
+    <div class="who"><strong>Muhammad Hamza</strong><span>IT Support &amp; Operations Engineer · Berlin</span></div>
+    <div class="avail"><b></b>Open to IT support, IT operations and identity roles</div>
     <h1>I keep people signed in, secure and working.</h1>
     <p class="lead">IT Support Engineer at a regulated financial-services company in Berlin. I look after identity, devices and day-to-day support for 100+ employees, and build home labs to go deeper.</p>
     <div class="cta"><a class="btn main" href="#projects">See my projects</a><a class="btn line" href="resume.pdf" download>Download resume</a></div>
@@ -177,7 +221,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     </div>
   </div>
   <div class="flow" role="img" aria-label="A sign-in from my lab: a user on a laptop goes through Microsoft Entra ID to Atlassian. Password checked, passkey used, Conditional Access passed, SAML token issued, signed in.">
-    <div class="head"><span>Live from my lab</span><span>hamzalab.de</span></div>
+    <div class="head"><span>Example sign-in from my lab</span><span>hamzalab.de</span></div>
     <div class="nodes">
       <div class="node"><span>User</span><strong>Laptop</strong></div><div class="wire"></div>
       <div class="node idp"><span>Identity</span><strong>Entra ID</strong></div><div class="wire"></div>
