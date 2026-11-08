@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Hamza · IT Support Engineer, Berlin</title>
+<meta name="description" content="Muhammad Hamza, IT Support Engineer in Berlin. Identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15233B; --paper:#F6F7F9; --surface:#FFFFFF; --line:#DDE2E9; --muted:#5A6576;
+  --ok:#23704F; --ok-bg:#E5F2EB; --accent:#2D5BA8;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{color-scheme:dark; --ink:#E7ECF3; --paper:#0F1726; --surface:#16213A; --line:#27324A; --muted:#9AA6B8;
+    --ok:#6FD3A3; --ok-bg:#16352A; --accent:#8BB0F2;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:-.01em}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:88px 0 72px}
+.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.025em;margin:0 0 20px;font-weight:700}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+/* the sign-in log entry: the one memorable element */
+.log{background:var(--surface);border:1px solid var(--line);border-radius:14px;font-family:var(--mono);font-size:13.5px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(21,35,59,.35)}
+.log .bar{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.log dl{margin:0;padding:8px 16px 14px;display:grid;grid-template-columns:auto 1fr;column-gap:18px}
+.log dt{color:var(--muted);padding:6px 0}
+.log dd{margin:0;padding:6px 0;opacity:0;transform:translateY(4px);animation:in .35s ease forwards}
+.log dd:nth-of-type(1){animation-delay:.15s}.log dd:nth-of-type(2){animation-delay:.35s}.log dd:nth-of-type(3){animation-delay:.55s}
+.log dd:nth-of-type(4){animation-delay:.75s}.log dd:nth-of-type(5){animation-delay:.95s}.log dd:nth-of-type(6){animation-delay:1.25s}
+.status{display:inline-block;background:var(--ok-bg);color:var(--ok);padding:1px 10px;border-radius:999px;font-weight:500}
+@keyframes in{to{opacity:1;transform:none}}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:30px;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 32px;max-width:40em}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
+.project h3{margin:0 0 6px;font-size:21px;letter-spacing:-.01em}
+.project .stack{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+.project ul{margin:0 0 18px;padding-left:20px}
+.project li{margin-bottom:6px}
+.project a.more{font-weight:600;text-decoration:none}
+.project a.more:hover{text-decoration:underline}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 28px 26px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.timeline li:first-child::before{background:var(--accent)}
+.timeline h3{margin:0;font-size:19px}
+.timeline .when{color:var(--muted);font-size:15px;margin:2px 0 8px}
+.timeline p{margin:0;max-width:44em}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+.skills h3{font-size:16px;margin:0 0 6px}
+.skills p{margin:0;color:var(--muted);font-size:15.5px}
+.resume{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:14.5px}
+.contact{display:flex;gap:24px;flex-wrap:wrap;font-size:17px}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:36px;padding:56px 0 48px}
+  .projects{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  nav a:not(.keep){display:none}
+}
+@media (max-width:520px){.skills{grid-template-columns:1fr}body{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Muhammad Hamza</a>
+  <nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a class="keep" href="#resume">Resume</a></nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <h1>I keep people signed in, secure and working.</h1>
+      <p class="lead">IT Support Engineer in Berlin, supporting 100+ employees at a regulated financial-services company. I work across identity, devices and end-user support with Okta, Microsoft Entra ID, Intune and JumpCloud.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+    <div class="log" role="img" aria-label="An example sign-in log entry from my Entra ID lab: Omar signed in to Atlassian Cloud with single sign-on, MFA satisfied, sign-in successful.">
+      <div class="bar"><span>Sign-in log</span><span>hamzalab.de</span></div>
+      <dl>
+        <dt>User</dt><dd>omar@hamzalab.de</dd>
+        <dt>Application</dt><dd>Atlassian Cloud</dd>
+        <dt>Protocol</dt><dd>SAML 2.0, SSO enforced</dd>
+        <dt>Method</dt><dd>Microsoft Authenticator</dd>
+        <dt>Policy</dt><dd>MFA required</dd>
+        <dt>Result</dt><dd><span class="status">Success</span></dd>
+      </dl>
+    </div>
+  </div>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Home labs I built in my own Microsoft tenant to practise what companies run in production. Each one is documented step by step on GitHub, including the problems I hit and how I fixed them.</p>
+    <div class="projects">
+      <article class="project">
+        <h3>Single sign-on with Microsoft Entra ID</h3>
+        <p class="stack">Entra ID, SAML, OIDC, Atlassian Guard, Conditional Access, PIM</p>
+        <ul>
+          <li>SAML and OIDC SSO for a test app, a custom app and Atlassian Cloud on my own verified domain, with SSO enforced</li>
+          <li>Passwordless sign-in with passkeys and one-time Temporary Access Passes</li>
+          <li>App-specific Conditional Access, risk-based policies, PIM and access reviews</li>
+        </ul>
+        <a class="more" href="https://github.com/hamzaahashmii/entra-sso-lab">Read the lab on GitHub</a>
+      </article>
+      <article class="project">
+        <h3>Device management with Microsoft Intune</h3>
+        <p class="stack">Intune, Entra join, Windows 11, BitLocker, Conditional Access</p>
+        <ul>
+          <li>Windows 11 enrolled through Entra join, with compliance and configuration profiles</li>
+          <li>Silent BitLocker, a security baseline and a packaged Win32 app deployment</li>
+          <li>Device onboarding, offboarding and remote wipe</li>
+        </ul>
+        <a class="more" href="https://github.com/hamzaahashmii/Intune-MDM-HomeLab">Read the lab on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">IT support across Germany and Pakistan since 2020.</p>
+    <ol class="timeline">
+      <li><h3>IT Support Engineer, Finoa GmbH</h3><p class="when">Berlin · Dec 2025 to present (intern from Sep 2025, promoted after 3 months)</p>
+        <p>Okta SSO and MFA for 100+ employees, ServiceNow workflows that route tickets automatically, the company-wide Claude AI rollout, onboarding and offboarding, and the hardware lifecycle for a mixed macOS and Windows fleet in JumpCloud.</p></li>
+      <li><h3>IT Support Engineer, Enliven AI Solutions</h3><p class="when">Bahawalpur · Mar 2022 to Feb 2024</p>
+        <p>Network troubleshooting, Active Directory and Microsoft 365 administration, workstation support and Python reports that replaced manual log review.</p></li>
+      <li><h3>IT Support Technician, Allied Schools</h3><p class="when">Islamabad · Jan 2020 to Dec 2021</p>
+        <p>Office network and printers, service desk and desktop support, staff onboarding and the IT knowledge base.</p></li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="sub">MSc Information and Communication Engineering at Berliner Hochschule für Technik. AZ-900 certified.</p>
+    <div class="skills">
+      <div><h3>Identity and access</h3><p>Okta, Microsoft Entra ID, Active Directory, Google Workspace, Microsoft 365, SSO, MFA, least privilege</p></div>
+      <div><h3>Devices</h3><p>JumpCloud, Microsoft Intune, macOS and Windows, hardware lifecycle, compliance</p></div>
+      <div><h3>Service management</h3><p>ServiceNow workflows, Jira, Confluence, knowledge bases</p></div>
+      <div><h3>Networking</h3><p>TCP/IP, DNS, DHCP, VPN, wireless, ping, traceroute, nslookup</p></div>
+      <div><h3>Collaboration</h3><p>Slack administration, Claude AI admin and connectors, meeting-room AV</p></div>
+      <div><h3>Automation</h3><p>Python, SQL, GitHub</p></div>
+    </div>
+  </section>
+
+  <section id="resume" class="resume">
+    <div><h2>Resume</h2><p class="sub" style="margin:0">Two pages, updated November 2026.</p></div>
+    <div class="btns"><a class="btn primary" href="resume.pdf" download>Download PDF</a><a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Open in browser</a></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="sub">Open to IT support, IT operations and identity roles in Berlin or remote.</p>
+    <div class="contact">
+      <a href="mailto:hamzaa.hashmii@gmail.com">hamzaa.hashmii@gmail.com</a>
+      <a href="https://www.linkedin.com/in/muhammad-hamza-9b2098296">LinkedIn</a>
+      <a href="https://github.com/hamzaahashmii">GitHub</a>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Muhammad Hamza</div></footer>
+</body>
+</html>
